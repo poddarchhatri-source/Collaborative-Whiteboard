@@ -1,0 +1,19 @@
+.venv/
+build/
+03_Source_Code/.venv/
+01_Server_Application/server
+01_Server_Application/server.exe
+01_Server_Application/server.app/
+02_Client_Application/client
+02_Client_Application/client.exe
+02_Client_Application/client.app/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+.DS_Store
+logs/
+database/
+exports/
+.env
+/06_Explanation_Video/My Movie 1.mp4.zip

@@ -1,0 +1,36 @@
+name: Build desktop applications
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        include:
+          - os: windows-latest
+            platform: windows
+          - os: ubuntu-latest
+            platform: linux
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install -e "./03_Source_Code[dev]"
+      - run: python 03_Source_Code/build_app.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: syncanvas-${{ matrix.platform }}-server
+          path: 01_Server_Application/
+          if-no-files-found: error
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        with:
+          name: syncanvas-${{ matrix.platform }}-client
+          path: 02_Client_Application/
+          if-no-files-found: error
+          retention-days: 14

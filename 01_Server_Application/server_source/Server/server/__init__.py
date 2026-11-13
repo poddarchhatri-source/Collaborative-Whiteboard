@@ -1,0 +1,1 @@
+"""SynCanvas authoritative server package."""

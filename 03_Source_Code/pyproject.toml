@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "syncanvas"
+version = "1.0.0"
+description = "LAN-based multi-user collaborative whiteboard"
+requires-python = ">=3.11"
+dependencies = [
+    "PySide6>=6.6,<7",
+    "Pillow>=10,<14",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "pytest-qt>=4.4,<5", "pyinstaller>=6.6,<7", "psutil>=6,<8"]
+docs = ["reportlab>=4,<6", "python-pptx>=1.0,<2", "python-docx>=1.1,<2", "matplotlib>=3.8,<4"]
+
+[tool.setuptools]
+packages = [
+    "client",
+    "client.canvas",
+    "client.networking",
+    "client.services",
+    "client.tools",
+    "client.ui",
+    "server",
+    "server.monitoring",
+    "server.networking",
+    "server.security",
+    "server.sessions",
+    "server.state",
+    "shared",
+]
+
+[tool.setuptools.package-dir]
+client = "Client/client"
+server = "Server/server"
+shared = "shared"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
