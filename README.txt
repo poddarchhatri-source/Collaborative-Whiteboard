@@ -1,4 +1,5 @@
 SynCanvas Collaborative Whiteboard
+GitHub repository: https://github.com/poddarchhatri-source/Collaborative-Whiteboard
 
 RUN ON WINDOWS
 1. In GitHub, open Actions and download the latest:

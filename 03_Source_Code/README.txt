@@ -1,4 +1,5 @@
 SynCanvas Source Code
+GitHub repository: https://github.com/poddarchhatri-source/Collaborative-Whiteboard
 
 REQUIREMENTS
 - Python 3.11 or newer
